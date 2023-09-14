@@ -35,7 +35,6 @@ services:
       MYSQL_PASSWORD: 'npm'
     volumes:
       - mysql:/var/lib/mysql
-	  
 volumes:
   mysql:
   data:
