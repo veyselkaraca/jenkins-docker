@@ -10,10 +10,10 @@ services:
       - "587:587"
       - "993:993"
     volumes:
-      - mail-data/:/var/mail/
-      - mail-state/:/var/mail-state/
-      - mail-logs/:/var/log/mail/
-      - config/:/tmp/docker-mailserver/
+      - mail-data:/var/mail/
+      - mail-state:/var/mail-state/
+      - mail-logs:/var/log/mail/
+      - config:/tmp/docker-mailserver/
       - /etc/localtime:/etc/localtime:ro
     environment:
       - ENABLE_RSPAMD=1
