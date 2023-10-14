@@ -17,5 +17,5 @@ RUN apt-get update && apt-get install -yq docker-ce docker-ce-cli containerd.io
 
 # Docker compose installation
 RUN curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
-
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=5 CMD curl -f http://localhost:8080/login || exit 1
 USER jenkins
